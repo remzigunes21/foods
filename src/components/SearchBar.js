@@ -24,10 +24,12 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     marginHorizontal: 10,
-    flexDirection: 'row', //textinput u searchbar içine yerleştirir
+    flexDirection: 'row',
+    marginTop: 10, //textinput u searchbar içine yerleştirir
   },
   input: {
     flex: 1,
+    fontSize: 18,
   },
   iconStyle: {
     fontSize: 35,
