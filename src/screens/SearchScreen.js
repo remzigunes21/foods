@@ -9,7 +9,15 @@ const SearchScreen = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, error] = useResults();
 
-  console.log(results);
+  //console.log(results);
+  const filterResultsByPrice = price => {
+    //price === "$"|| "$$"||"$$$" //bu price api nin bir attributu dur
+    //bu dolar işaretleri de api de var bunlar ucuz ve pahalı yemekleri belirtir
+    return results.filter(result => {
+      return result.price === price;
+    });
+  };
+
   return (
     <View>
       <SearchBar
@@ -19,9 +27,9 @@ const SearchScreen = () => {
       />
       {error ? <Text>{error}</Text> : null}
       <Text>we have found {results.length} results </Text>
-      <ResultsList title="Cost Effective" />
-      <ResultsList title="Bit Pricier" />
-      <ResultsList title="Big Spender" />
+      <ResultsList results={filterResultsByPrice('$')} title="Cost Effective" />
+      <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier" />
+      <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender" />
     </View>
   );
 };
