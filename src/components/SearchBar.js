@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const SearchBar = () => {
   return (
     <View style={styles.container}>
-      <Ionicons name="ios-search" size={30} />
+      <Ionicons name="ios-search" style={styles.iconStyle} />
       <TextInput
         autoCapitalize="none"
         autoCorrect={false}
@@ -25,5 +25,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginHorizontal: 10,
     flexDirection: 'row', //textinput u searchbar içine yerleştirir
+  },
+  input: {
+    flex: 1,
+  },
+  iconStyle: {
+    fontSize: 35,
+    alignSelf: 'center',
+    marginHorizontal: 15,
   },
 });
