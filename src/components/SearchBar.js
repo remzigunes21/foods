@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const SearchBar = ({term, onTermChange}) => {
+const SearchBar = ({term, onTermChange, onTermSubmit}) => {
   return (
     <View style={styles.container}>
       <Ionicons name="ios-search" style={styles.iconStyle} />
@@ -12,7 +12,8 @@ const SearchBar = ({term, onTermChange}) => {
         style={styles.input}
         placeholder="Search"
         value={term}
-        onChangeText={newTerm => onTermChange(newTerm)}
+        onChangeText={onTermChange}
+        onEndEditing={onTermSubmit}
       />
     </View>
   );
