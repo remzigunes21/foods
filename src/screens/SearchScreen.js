@@ -3,11 +3,13 @@ import {View, Text, StyleSheet, TextInput} from 'react-native';
 import SearchBar from '../components/SearchBar';
 import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
+import ResultsList from '../components/ResultsList';
 
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, error] = useResults();
 
+  console.log(results);
   return (
     <View>
       <SearchBar
@@ -17,6 +19,9 @@ const SearchScreen = () => {
       />
       {error ? <Text>{error}</Text> : null}
       <Text>we have found {results.length} results </Text>
+      <ResultsList title="Cost Effective" />
+      <ResultsList title="Bit Pricier" />
+      <ResultsList title="Big Spender" />
     </View>
   );
 };
