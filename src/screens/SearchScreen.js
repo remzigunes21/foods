@@ -19,7 +19,7 @@ const SearchScreen = () => {
   };
 
   return (
-    <View>
+    <View style={{marginLeft: 15}}>
       <SearchBar
         term={term}
         onTermChange={newTerm => setTerm(newTerm)}
