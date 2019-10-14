@@ -16,11 +16,12 @@ const ResultsDetail = ({result}) => {
 export default ResultsDetail;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {marginLeft: 15},
   image: {
     width: 250,
     height: 125,
     borderRadius: 4,
+    marginBottom: 3,
   },
   name: {
     fontWeight: 'bold',
