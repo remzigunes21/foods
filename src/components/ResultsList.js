@@ -24,7 +24,7 @@ const ResultsList = ({title, results, navigation}) => {
   );
 };
 
-export default ResultsList;
+export default withNavigation(ResultsList); //SearchScreen den props almadan direk RsultsShow a gidebiliriz
 
 const styles = StyleSheet.create({
   container: {
