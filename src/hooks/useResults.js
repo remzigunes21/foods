@@ -22,7 +22,7 @@ export default () => {
   //searchApi yi cağırırsak eger... önce işlenir.Bu da performansı azaltır
   //searchapi("pasta")===kotu kod
   useEffect(() => {
-    searchApi('pasta');
+    searchApi('pasta'); //baslangıc degerimiz pasta
   }, []);
 
   return [searchApi, results, error];
